@@ -46,4 +46,25 @@ public class EmployeeWage
         dailyEmpWage = WAGE_PER_HR * empHrs;
         Console.WriteLine("Daily Emp Wage Half Day :" + dailyEmpWage);
     }
+
+    //UC4
+    public void SwitchCase()
+    {
+        int dailyEmpWage = 0;
+        int empCheck = random.Next(0, 2);
+        switch (empCheck)
+        {
+            case 0:
+                dailyEmpWage = WAGE_PER_HR * FULL_DAY_HR;
+                Console.WriteLine("Daily Emp Wage Full Day :" + dailyEmpWage);
+                break;
+            case 1:
+                dailyEmpWage = WAGE_PER_HR * HALF_DAY_HR;
+                Console.WriteLine("Daily Emp Wage Half Day :" + dailyEmpWage);
+                break;
+            default:
+                Console.WriteLine("Employee is absent");
+                break;
+        }
+    }
 }
