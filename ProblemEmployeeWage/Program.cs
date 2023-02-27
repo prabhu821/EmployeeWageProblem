@@ -10,7 +10,7 @@ public class Program
         while (flag)
         {
             Console.WriteLine("\nSelect the option");
-            Console.WriteLine("1.Attendance \n2.Daily Employee Wage \n3.Exit");
+            Console.WriteLine("1.Attendance \n2.Daily Employee Wage \n3.Part Time Employee Wage \n4.Exit");
             int check = Convert.ToInt32(Console.ReadLine());
             switch (check)
             {
@@ -19,6 +19,9 @@ public class Program
                     break;
                 case 2:
                     employeeWage.EmpWage();
+                    break;
+                case 3:
+                    employeeWage.PartTime();
                     break;
                 default:
                     flag = false;
