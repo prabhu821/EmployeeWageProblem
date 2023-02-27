@@ -132,4 +132,35 @@ public class EmployeeWage
         int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
         Console.WriteLine("Total Emp Wage :" + totalEmpWage);
     }
+
+    //UC8
+    public void EmpWagesForMultipleCompany(string company)
+    {
+        const int ABSENT = 0, IS_PART_TIME = 1, IS_FULL_TIME = 2, EMP_RATE_PER_HOUR = 20, NUMBER_OF_WORKING_DAYS = 20,
+            MAX_HOURS_IN_MONTH = 100;
+
+        int empHours = 0, empWage = 0, workingHrs = 0, totalWage = 0, Working_Days = 0;
+        Random random = new Random();
+        int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+
+        while (totalEmpHrs <= MAX_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS)
+        {
+            int empInput = random.Next(0, 4);
+            switch (empInput)
+            {
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
+            }
+            totalEmpHrs += empHrs;
+        }
+        int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
+        Console.WriteLine("Employee is of {0} and monthly salary is : " + totalEmpWage, company);
+    }
 }
