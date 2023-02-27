@@ -11,7 +11,7 @@ public class Program
         {
             Console.WriteLine("\nSelect the option");
             Console.WriteLine("1.Attendance \n2.Daily Employee Wage \n3.Part Time Employee Wage \n4.Switch Case Statement " +
-                "\n5.Monthly Wages \n6.Exit");
+                "\n5.Monthly Wages \n6.Total Monthly Wages \n7.Exit");
             int check = Convert.ToInt32(Console.ReadLine());
             switch (check)
             {
@@ -29,6 +29,9 @@ public class Program
                     break;
                 case 5:
                     employeeWage.MonthlyWage();
+                    break;
+                case 6:
+                    employeeWage.TotalMonthlyWages();
                     break;
                 default:
                     flag = false;

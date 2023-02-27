@@ -85,4 +85,19 @@ public class EmployeeWage
             Console.WriteLine("Monthly Employee is Absent");
         }
     }
+
+    //UC6
+    public void TotalMonthlyWages()
+    {
+        int day = 0, hours = 0, DailyEmpWage = 0, EmpWage = 0;
+        while (day < 20 & hours < 100)
+        {
+            day++;
+            hours += 8;
+        }
+        EmpWage = day * hours;
+        DailyEmpWage = WAGE_PER_HR * EmpWage;
+        Console.WriteLine("Employee Total Monthly Wage :" + DailyEmpWage);
+    }
+
 }
