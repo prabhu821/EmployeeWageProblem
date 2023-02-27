@@ -100,4 +100,36 @@ public class EmployeeWage
         Console.WriteLine("Employee Total Monthly Wage :" + DailyEmpWage);
     }
 
+    //UC7
+    public void RefactorEmployeeWageClass()
+    {
+        const int ABSENT = 0, IS_PART_TIME = 1, IS_FULL_TIME = 2, EMP_RATE_PER_HOUR = 20, NUMBER_OF_WORKING_DAYS = 20,
+            MAX_HOURS_IN_MONTH = 100;
+
+        int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+        while (totalEmpHrs <= MAX_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS)
+        {
+            totalWorkingDays++;
+            Console.WriteLine("Select the option");
+            Console.WriteLine("\n1.Part Time" + "\n2.Full Time" + "\n3.Absent");
+
+            int options = Convert.ToInt32(Console.ReadLine());
+            switch (options)
+            {
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
+            }
+            totalEmpHrs += empHrs;
+            Console.WriteLine("Day#" + totalWorkingDays + " Emp Hrs  :" + empHrs);
+        }
+        int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
+        Console.WriteLine("Total Emp Wage :" + totalEmpWage);
+    }
 }
