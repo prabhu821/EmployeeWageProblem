@@ -20,4 +20,17 @@ public class EmployeeWage
         else
             Console.WriteLine("Employee is Absent");
     }
+
+    //UC2
+    public void EmpWage()
+    {
+        int dailyEmpWage = 0, empHrs = 0;
+        int empCheck = random.Next(0, 2);
+        if (empCheck == IS_FULL_TIME)
+            empHrs = FULL_DAY_HR;
+        else
+            empHrs = 0;
+        dailyEmpWage = WAGE_PER_HR * empHrs;
+        Console.WriteLine("Daily Emp Wage Full Day :" + dailyEmpWage);
+    }
 }

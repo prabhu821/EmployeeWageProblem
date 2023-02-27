@@ -10,12 +10,15 @@ public class Program
         while (flag)
         {
             Console.WriteLine("\nSelect the option");
-            Console.WriteLine("1.Attendance \n2.Exit");
+            Console.WriteLine("1.Attendance \n2.Daily Employee Wage \n3.Exit");
             int check = Convert.ToInt32(Console.ReadLine());
             switch (check)
             {
                 case 1:
                     employeeWage.Attendence();
+                    break;
+                case 2:
+                    employeeWage.EmpWage();
                     break;
                 default:
                     flag = false;
