@@ -11,7 +11,8 @@ public class Program
         {
             Console.WriteLine("\nSelect the option");
             Console.WriteLine("1.Attendance \n2.Daily Employee Wage \n3.Part Time Employee Wage \n4.Switch Case Statement " +
-                "\n5.Monthly Wages \n6.Total Monthly Wages \n7.Refactor Employee Wage \n8.Employee Wage Multiple Companies \n9.Exit");
+                "\n5.Monthly Wages \n6.Total Monthly Wages \n7.Refactor Employee Wage \n8.Employee Wage Multiple Companies " +
+                "\n9.Total Wage for Each Company \n10.Exit");
             int check = Convert.ToInt32(Console.ReadLine());
             switch (check)
             {
@@ -39,6 +40,14 @@ public class Program
                 case 8:
                     employeeWage.EmpWagesForMultipleCompany("Apple");
                     employeeWage.EmpWagesForMultipleCompany("Deloite");
+                    break;
+                case 9:
+                    EmpWageBuilder program = new EmpWageBuilder();
+                    program.EmployeeWage("Infosys", 80, 12, 90);
+                    program.ComputeWage();
+                    EmpWageBuilder wipro = new EmpWageBuilder();
+                    wipro.EmployeeWage("TCS", 55, 22, 110);
+                    wipro.ComputeWage();
                     break;
                 default:
                     flag = false;
